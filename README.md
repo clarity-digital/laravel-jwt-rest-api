@@ -1,7 +1,6 @@
 # Laravel JWT
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 This repository contains a Laravel 10 with JWT authentication boilerplate
 using the [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth) package.
