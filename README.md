@@ -6,9 +6,13 @@
 This repository contains a Laravel 10 with JWT authentication boilerplate
 using the [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth) package.
 
+This boilerplate also has a domain-driven variant which can be
+found [here](https://github.com/avocado-media/laravel-jwt-starter-ddd).
+
 ## Installation
 
-> Note: the application does not have a `package.json` since this project purely a REST API that will not use any JavaScript or asset builders such as Vite.
+> Note: the application does not have a `package.json` since this project purely a REST API that will not use any
+> JavaScript or asset builders such as Vite.
 
 1. `cp .env .env.example`
 2. `composer install`
