@@ -19,7 +19,13 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request): UserResource
     {
-        Auth::user()->update($request->validated());
+        $request->user()->fill($request->validated());
+
+        if ($request->user()->isDirty('email')) {
+            $request->user()->email_verified_at = null;
+        }
+
+        $request->user()->save();
 
         return new UserResource(Auth::user()->fresh());
     }
