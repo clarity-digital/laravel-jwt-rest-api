@@ -10,6 +10,9 @@ use Illuminate\Validation\ValidationException;
 
 class SendPasswordResetLinkController extends Controller
 {
+    /**
+     * Send a reset link to the given email address.
+     */
     public function __invoke(Request $request): JsonResponse
     {
         $request->validate([

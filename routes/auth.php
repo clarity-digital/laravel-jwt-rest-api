@@ -1,20 +1,19 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\JwtAuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SendEmailVerificationNotificationController;
 use App\Http\Controllers\Auth\SendPasswordResetLinkController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-// Auth routes that DO NOT require JWT authentication
-Route::post('/register', [AuthController::class, 'register'])
+Route::post('/register', [JwtAuthController::class, 'register'])
     ->name('register');
 
-Route::post('/login', [AuthController::class, 'login'])
+Route::post('/login', [JwtAuthController::class, 'login'])
     ->name('login');
 
-Route::post('/refresh', [AuthController::class, 'refresh'])
+Route::post('/refresh', [JwtAuthController::class, 'refresh'])
     ->name('refresh');
 
 Route::post('/forgot-password', SendPasswordResetLinkController::class)
@@ -23,7 +22,6 @@ Route::post('/forgot-password', SendPasswordResetLinkController::class)
 Route::post('/reset-password', ResetPasswordController::class)
     ->name('password.update');
 
-// Auth routes that require JWT authentication
 Route::middleware('auth:api')->group(function () {
     Route::post('/email/verification-notification', SendEmailVerificationNotificationController::class)
         ->middleware(['throttle:6,1'])
@@ -33,6 +31,6 @@ Route::middleware('auth:api')->group(function () {
         ->middleware(['signed', 'throttle:6,1'])
         ->name('verification.verify');
 
-    Route::post('/logout', [AuthController::class, 'logout'])
+    Route::post('/logout', [JwtAuthController::class, 'logout'])
         ->name('logout');
 });

@@ -35,7 +35,8 @@ Telescope dashboard at the `/telescope` URL (prefixed with your local URL).
 
 ## Testing
 
-In order to run the tests, run `./vendor/bin/pest`.
+This boilerplate comes with [Pest](https://pestphp.com/) as its testing framework. In order to run the tests,
+run `./vendor/bin/pest`.
 
 ## License
 

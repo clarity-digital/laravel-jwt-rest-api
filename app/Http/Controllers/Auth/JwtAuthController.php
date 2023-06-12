@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
-class AuthController extends Controller
+class JwtAuthController extends Controller
 {
+    /**
+     * Register a new user and return an access token.
+     */
     public function register(Request $request): JsonResponse
     {
         $request->validate([
@@ -36,6 +39,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Authenticate a user and return an access token.
+     */
     public function login(Request $request): JsonResponse
     {
         $request->validate([
@@ -59,6 +65,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Log out the currently authenticated user (invalidate the token).
+     */
     public function logout(): Response
     {
         Auth::logout();
@@ -66,6 +75,9 @@ class AuthController extends Controller
         return response()->noContent();
     }
 
+    /**
+     * Refresh the currently authenticated user's access token.
+     */
     public function refresh(): JsonResponse
     {
         $token = Auth::refresh();

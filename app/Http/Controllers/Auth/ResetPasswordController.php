@@ -14,6 +14,9 @@ use Illuminate\Validation\ValidationException;
 
 class ResetPasswordController extends Controller
 {
+    /**
+     * Reset the password of the currently authenticated user.
+     */
     public function __invoke(Request $request): JsonResponse
     {
         $request->validate([

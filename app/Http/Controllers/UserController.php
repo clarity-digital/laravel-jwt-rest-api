@@ -12,11 +12,17 @@ use Illuminate\Validation\Rules;
 
 class UserController extends Controller
 {
+    /**
+     * Show the currently authenticated user.
+     */
     public function show(): UserResource
     {
         return new UserResource(Auth::user());
     }
 
+    /**
+     * Update the currently authenticated user.
+     */
     public function update(UpdateUserRequest $request): UserResource
     {
         $request->user()->fill($request->validated());
@@ -30,6 +36,9 @@ class UserController extends Controller
         return new UserResource(Auth::user()->fresh());
     }
 
+    /**
+     * Update the password of the currently authenticated user.
+     */
     public function changePassword(Request $request): JsonResponse
     {
         $request->validate([

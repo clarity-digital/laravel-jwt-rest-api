@@ -10,18 +10,30 @@ use Illuminate\Support\Facades\URL;
 
 class AuthServiceProvider extends ServiceProvider
 {
-    protected $policies = [];
+    /**
+     * The model to policy mappings for the application.
+     *
+     * @var array<class-string, class-string>
+     */
+    protected $policies = [
+        //
+    ];
 
+    /**
+     * Register any authentication / authorization services.
+     */
     public function boot(): void
     {
         $this->registerPolicies();
 
+        // custom password reset link, remove this if you want to use the default link
         ResetPassword::createUrlUsing(function (object $notifiable, string $token) {
             $url = "/password-reset?token=$token&email={$notifiable->getEmailForPasswordReset()}";
 
             return config('app.frontend_url') . $url;
         });
 
+        // Custom verify email link (you should do a GET request to the $url), remove this if you want to use the default link
         VerifyEmail::createUrlUsing(function (object $notifiable) {
             $url = URL::temporarySignedRoute(
                 'verification.verify',

@@ -7,6 +7,9 @@ use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Register any application services.
+     */
     public function register(): void
     {
         if ($this->app->environment('local')) {
@@ -15,8 +18,11 @@ class AppServiceProvider extends ServiceProvider
         }
     }
 
+    /**
+     * Bootstrap any application services.
+     */
     public function boot(): void
     {
-        JsonResource::withoutWrapping();
+        JsonResource::withoutWrapping(); // Remove this if you want to wrap data within a 'data' key
     }
 }
