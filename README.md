@@ -38,6 +38,11 @@ Telescope dashboard at the `/telescope` URL (prefixed with your local URL).
 This boilerplate comes with [Pest](https://pestphp.com/) as its testing framework. In order to run the tests,
 run `./vendor/bin/pest`.
 
+## Contributing
+
+Feel free to open a pull request if you want to contribute to this project. All contributions / suggestions are
+welcome ✨
+
 ## License
 
 This project is open-sourced software licensed under the MIT license.
