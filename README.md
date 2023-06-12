@@ -1,4 +1,4 @@
-# Laravel JWT REST API
+![banner](https://github.com/avocado-media/laravel-jwt-rest-api/assets/32078923/406beeba-f72e-41be-bab1-c07ed32eff83)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
