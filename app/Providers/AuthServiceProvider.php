@@ -44,7 +44,10 @@ class AuthServiceProvider extends ServiceProvider
                 ]
             );
 
-            return str_replace(config('app.url') . '/api/verify-email', '', urldecode($url));
+            $needle = config('app.url') . '/api/verify-email/';
+            $targetUrl = str_replace($needle, '', urldecode($url));
+
+            return config('app.frontend_url') . '/verify-email?url=' . $targetUrl;
         });
     }
 }

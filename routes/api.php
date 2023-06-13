@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
-Route::middleware('auth:api')->group(function () {
+Route::middleware(['auth:api', 'verified'])->group(function () {
     Route::get('/user', [UserController::class, 'show'])
         ->name('user.show');
 
