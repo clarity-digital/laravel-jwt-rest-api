@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // custom password reset link, remove this if you want to use the default link
+        // Custom password reset link, remove this if you want to use the default link
         ResetPassword::createUrlUsing(function (object $notifiable, string $token) {
             $url = "/password-reset?token=$token&email={$notifiable->getEmailForPasswordReset()}";
 
