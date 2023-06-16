@@ -3,7 +3,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains a Laravel 10 with JWT authentication boilerplate
-using the [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth) package.
+using the [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth) package, inspired by
+the [Laravel Breeze](https://github.com/laravel/breeze) package (API stack).
+
+## Features
+
+- JWT authentication (login, register, password reset, email verification)
+- Profile updating
+- Password changing
+- Tests (using [Pest](https://pestphp.com/))
 
 ## Installation
 
