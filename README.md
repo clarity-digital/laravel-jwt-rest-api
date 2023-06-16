@@ -18,6 +18,7 @@ repository [here](https://github.com/avocado-media/nextjs-jwt-app-router).
 - Profile updating
 - Password changing
 - Tests (using [Pest](https://pestphp.com/))
+- [Laravel Telescope](https://laravel.com/docs/8.x/telescope) (disabled by default)
 
 ## Installation
 
@@ -41,7 +42,7 @@ The access token can be refreshed for two weeks. After that, the user has to log
 
 ## Telescope
 
-This boilerplate comes with [Laravel Telescope](https://laravel.com/docs/8.x/telescope) installed. You can access the
+This boilerplate comes with Laravel Telescope installed. You can access the
 Telescope dashboard at the `/telescope` URL (prefixed with your local URL).
 
 ## Testing
