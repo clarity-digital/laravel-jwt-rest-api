@@ -6,6 +6,12 @@ This repository contains a Laravel 10 with JWT authentication boilerplate
 using the [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth) package, inspired by
 the [Laravel Breeze](https://github.com/laravel/breeze) package (API stack).
 
+## Next.js frontend
+
+We created a dedicated frontend using [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/)
+and [NextAuth](https://next-auth.js.org/). You can find the
+repository [here](https://github.com/avocado-media/nextjs-jwt-app-router).
+
 ## Features
 
 - JWT authentication (login, register, password reset, email verification)
