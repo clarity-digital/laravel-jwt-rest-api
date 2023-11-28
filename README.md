@@ -26,7 +26,7 @@ repository [here](https://github.com/avocado-media/nextjs-jwt-app-router).
 > Note: the application does not have a `package.json` since this project purely a REST API that will not use any
 > JavaScript or asset builders such as Vite.
 
-1. `cp .env .env.example`
+1. `cp .env.example .env`
 2. `composer install`
 3. `php artisan jwt:secret` (generate a secret key that will be used to sign your tokens)
 4. `php artisan migrate:fresh --seed`
