@@ -11,7 +11,7 @@ use App\Http\Resources\Users\UserResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class wUserController extends Controller
 {
     public function show(): UserResource
     {
