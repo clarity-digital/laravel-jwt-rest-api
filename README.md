@@ -48,6 +48,11 @@ The access token can be refreshed for two weeks. After that, the user has to log
 This boilerplate comes with Laravel Telescope installed. You can access the
 Telescope dashboard at the `/telescope` URL (prefixed with your local URL).
 
+## Larastan
+
+This project uses Larastan. You can run the static analysis using `./vendor/bin/phpstan analyse`. Important note: a
+resource class requires a `@mixin` annotation so that PHPStan knows what model the resource is using.
+
 ## Testing
 
 This boilerplate comes with [Pest](https://pestphp.com/) as its testing framework. In order to run the tests,
