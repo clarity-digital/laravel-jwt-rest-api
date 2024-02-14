@@ -51,12 +51,14 @@ Telescope dashboard at the `/telescope` URL (prefixed with your local URL).
 
 ## Larastan
 
-This project uses [Larastan](https://github.com/larastan/larastan/commit/37f9ce80890a67a02b1d55bf79eb73604880c6b9). You can run the static analysis using `./vendor/bin/phpstan analyse`. Important note: a
-resource class requires a `@mixin` annotation so that PHPStan knows what model the resource is using.
+This project uses [Larastan](https://github.com/larastan/larastan/commit/37f9ce80890a67a02b1d55bf79eb73604880c6b9). You 
+can run the static analysis using `./vendor/bin/phpstan analyse`. Important note: a resource class requires a `@mixin`
+annotation so that PHPStan knows what model the resource is using.
 
 ## Husky
 
-This project uses [Husky](https://typicode.github.io/husky/) to run Pint, Larastan and Pest before pushing to the repository.
+This project uses [Husky](https://typicode.github.io/husky/) to run Larastanm, Pint and Pest before pushing to the
+repository.
 
 ## Testing
 
