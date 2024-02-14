@@ -31,7 +31,10 @@ repository [here](https://github.com/avocado-media/nextjs-jwt-app-router).
 3. `php artisan jwt:secret` (generate a secret key that will be used to sign your tokens)
 4. `php artisan migrate:fresh --seed`
 
-## Authentication
+## User authentication
+
+In order to list all the users in the database, you can run `php artisan user:list`. By default, a user with the 
+'developer@example.com' email will be seeded. 
 
 In order to authenticate, you have to log in using valid credentials. User data and an access token will be returned.
 You can use this access token to do subsequent requests to the API.
@@ -40,11 +43,15 @@ The access token has a TTL of 1 hour until it expires. The access token should b
 avoid becoming unauthenticated.
 
 The access token can be refreshed for two weeks. After that, the user has to log in again.
-
 ## Telescope
 
 This boilerplate comes with Laravel Telescope installed. You can access the
 Telescope dashboard at the `/telescope` URL (prefixed with your local URL).
+
+## Larastan
+
+This project uses Larastan. You can run the static analysis using `./vendor/bin/phpstan analyse`. Important note: a
+resource class requires a `@mixin` annotation so that PHPStan knows what model the resource is using.
 
 ## Testing
 

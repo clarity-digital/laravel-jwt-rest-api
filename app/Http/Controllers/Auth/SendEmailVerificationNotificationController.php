@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class SendEmailVerificationNotificationController extends Controller
 {
-    /**
-     * Send a new email verification notification.
-     */
     public function __invoke(): JsonResponse
     {
         if (Auth::user()->hasVerifiedEmail()) {

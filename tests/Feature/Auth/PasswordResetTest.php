@@ -8,7 +8,7 @@ test('a password reset link can be requested for an email', function () {
     Notification::fake();
 
     $user = User::factory()->create([
-        'email' => 'test@example.com'
+        'email' => 'test@example.com',
     ]);
 
     $this->postJson('/api/forgot-password', [
@@ -22,7 +22,7 @@ test('a password can be reset with a valid token', function () {
     Notification::fake();
 
     $user = User::factory()->create([
-        'email' => 'test@example.com'
+        'email' => 'test@example.com',
     ]);
 
     $this->postJson('/api/forgot-password', [
@@ -31,9 +31,9 @@ test('a password can be reset with a valid token', function () {
 
     Notification::assertSentTo($user, ResetPassword::class, function ($notification) use ($user) {
         $response = $this->postJson('/api/reset-password', [
-            'token' => $notification->token,
-            'email' => $user->email,
-            'password' => 'new-password',
+            'token'                 => $notification->token,
+            'email'                 => $user->email,
+            'password'              => 'new-password',
             'password_confirmation' => 'new-password',
         ]);
 

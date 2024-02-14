@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         ResetPassword::createUrlUsing(function (object $notifiable, string $token) {
             $url = "/password-reset?token=$token&email={$notifiable->getEmailForPasswordReset()}";
 
-            return config('app.frontend_url') . $url;
+            return config('app.frontend_url').$url;
         });
 
         // Custom verify email link (you should do a GET request to the $url), remove this if you want to use the default link
@@ -39,15 +39,15 @@ class AuthServiceProvider extends ServiceProvider
                 'verification.verify',
                 Carbon::now()->addMinutes(config('auth.verification.expire', 60)),
                 [
-                    'id' => $notifiable->getKey(),
-                    'hash' => sha1($notifiable->getEmailForVerification())
+                    'id'   => $notifiable->getKey(),
+                    'hash' => sha1($notifiable->getEmailForVerification()),
                 ]
             );
 
-            $needle = config('app.url') . '/api/verify-email/';
+            $needle = config('app.url').'/api/verify-email/';
             $targetUrl = str_replace($needle, '', urldecode($url));
 
-            return config('app.frontend_url') . '/verify-email?url=' . $targetUrl;
+            return config('app.frontend_url').'/verify-email?url='.$targetUrl;
         });
     }
 }

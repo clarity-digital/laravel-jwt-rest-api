@@ -9,7 +9,7 @@ test('users can authenticate and get back the user object and access token', fun
     ]);
 
     $response = $this->postJson('/api/login', [
-        'email' => $user->email,
+        'email'    => $user->email,
         'password' => $password,
     ]);
 
@@ -17,6 +17,6 @@ test('users can authenticate and get back the user object and access token', fun
     $response->assertSuccessful();
     $response->assertJsonStructure([
         'user',
-        'access_token'
+        'access_token',
     ]);
 });
