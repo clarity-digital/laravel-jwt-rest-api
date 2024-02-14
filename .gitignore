@@ -18,4 +18,3 @@ yarn-error.log
 /.idea
 /.vscode
 .DS_Store
-phpunit.xml
