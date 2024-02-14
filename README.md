@@ -57,7 +57,7 @@ annotation so that PHPStan knows what model the resource is using.
 
 ## Husky
 
-This project uses [Husky](https://typicode.github.io/husky/) to run Larastanm, Pint and Pest before pushing to the
+This project uses [Husky](https://typicode.github.io/husky/) to run Larastan, Pint and Pest before pushing to the
 repository.
 
 ## Testing
