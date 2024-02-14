@@ -1,19 +1,19 @@
 <?php
 
-use App\Http\Controllers\Auth\JwtAuthController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SendEmailVerificationNotificationController;
 use App\Http\Controllers\Auth\SendPasswordResetLinkController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/register', [JwtAuthController::class, 'register'])
+Route::post('/register', [AuthController::class, 'register'])
     ->name('register');
 
-Route::post('/login', [JwtAuthController::class, 'login'])
+Route::post('/login', [AuthController::class, 'login'])
     ->name('login');
 
-Route::post('/refresh', [JwtAuthController::class, 'refresh'])
+Route::post('/refresh', [AuthController::class, 'refresh'])
     ->name('refresh');
 
 Route::post('/forgot-password', SendPasswordResetLinkController::class)
@@ -31,6 +31,6 @@ Route::middleware('auth:api')->group(function () {
         ->middleware(['signed', 'throttle:6,1'])
         ->name('verification.verify');
 
-    Route::post('/logout', [JwtAuthController::class, 'logout'])
+    Route::post('/logout', [AuthController::class, 'logout'])
         ->name('logout');
 });
