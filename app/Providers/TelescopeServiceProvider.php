@@ -46,12 +46,8 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 
     protected function gate(): void
     {
-        $allowedEmails = [
-            DatabaseSeeder::DEVELOPER_EMAIL,
-        ];
-
-        Gate::define('viewTelescope', function ($user) use ($allowedEmails) {
-            return in_array($user->email, $allowedEmails);
+        Gate::define('viewTelescope', function ($user) {
+            return $user->email == DatabaseSeeder::DEVELOPER_EMAIL;
         });
     }
 }
